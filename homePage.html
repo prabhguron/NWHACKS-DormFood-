@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DormFood - Delicious Dorm Meals Delivered</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="hero-gradient">
+    <nav class="flex items-center justify-between px-6 py-4 max-w-7xl mx-auto">
+        <div class="flex items-center gap-2">
+            <span class="text-3xl">🍽️</span>
+            <span class="text-xl font-bold text-foreground">WantAnything</span>
+        </div>
+        <div class="flex items-center gap-4">
+            <button class="btn btn-ghost" id="signInBtn">Sign In</button>
+            <button class="btn btn-primary" id="getStartedBtn">Get Started</button>
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto px-6 py-16 lg:py-24">
+        <div class="text-center max-w-3xl mx-auto animate-fade-in">
+            <h1 class="text-4xl lg:text-6xl font-bold text-foreground leading-tight mb-6">
+                Welcome to 
+                <span class="text-primary">DormFood</span>
+            </h1>
+            <p class="text-lg lg:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+                Your one-stop solution for delicious dormitory food services. 
+                Order fresh, healthy meals delivered right to your door.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button class="btn btn-primary btn-lg w-full sm:w-auto" id="startOrderingBtn">
+                    Start Ordering
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 12h14"/>
+                        <path d="m12 5 7 7-7 7"/>
+                    </svg>
+                </button>
+                
+                <button class="btn btn-outline btn-lg w-full sm:w-auto" id="viewMenuBtn">
+                    View Menu
+                </button>
+            </div>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8 mt-20">
+            <div class="card-auth p-8 text-center animate-fade-in delay-1">
+                <div class="icon-box">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/>
+                        <path d="M7 2v20"/>
+                        <path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-semibold text-foreground mb-2">Fresh Meals</h3>
+                <p class="text-muted-foreground">
+                    Prepared daily with quality ingredients for nutritious eating
+                </p>
+            </div>
+
+            <div class="card-auth p-8 text-center animate-fade-in delay-2">
+                <div class="icon-box">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"/>
+                        <polyline points="12 6 12 12 16 14"/>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-semibold text-foreground mb-2">Fast Delivery</h3>
+                <p class="text-muted-foreground">
+                    Get your food delivered within 30 minutes to your dorm
+                </p>
+            </div>
+
+            <div class="card-auth p-8 text-center animate-fade-in delay-3">
+                <div class="icon-box">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-semibold text-foreground mb-2">Top Rated</h3>
+                <p class="text-muted-foreground">
+                    4.8★ average rating from thousands of happy students
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
