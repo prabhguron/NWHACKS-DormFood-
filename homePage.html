@@ -8,7 +8,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;900&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     
-    <link rel="stylesheet" href="/styles/home.css"> <link rel="stylesheet" href="home.css">   </head>
+    <link rel="stylesheet" href="styles/home.css">
+</head>
 <body>
 
     <nav class="navbar">
@@ -26,9 +27,9 @@
         <aside class="sidebar">
             
             <div class="user-widget">
-                <div class="user-avatar">RS</div>
+                <div class="user-avatar">...</div>
                 <div class="user-info">
-                    <h3 class="user-name">Rodrigo S.</h3>
+                    <h3 class="user-name">Loading...</h3>
                     <span class="user-status">📍 Dorm 4 • Floor 2</span>
                 </div>
             </div>
@@ -50,7 +51,7 @@
                 </button>
             </div>
 
-            <a href="order.html" class="btn-sidebar-cta">
+            <a href="orders.html" class="btn-sidebar-cta">
                 <i class="ph ph-plus-circle"></i>
                 Start a Run
             </a>
@@ -67,67 +68,16 @@
             </header>
 
             <div class="ticket-list">
-
-                <article class="ticket">
-                    <div class="ticket-left">
-                        <div class="avatar-circle">JD</div>
-                        <div class="runner-meta">
-                            <span class="runner-name">John Doe</span>
-                            <span class="group-tag">Dorm 4</span>
-                        </div>
-                    </div>
-                    
-                    <div class="ticket-split"></div> <div class="ticket-right">
-                        <div class="trip-info">
-                            <span class="label-small">I'm going to...</span>
-                            <h2 class="store-large">COSTCO</h2>
-                            <div class="meta-row">
-                                <span><i class="ph ph-clock"></i> 20 min</span>
-                                <span><i class="ph ph-package"></i> 5 Items Max</span>
-                            </div>
-                        </div>
-                        <div class="trip-action">
-                            <div class="slot-counter">3/5 slots full</div>
-                            <button class="btn-request">Request</button>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="ticket">
-                    <div class="ticket-left">
-                        <div class="avatar-circle style-orange">SJ</div>
-                        <div class="runner-meta">
-                            <span class="runner-name">Sarah J.</span>
-                            <span class="group-tag">CS Club</span>
-                        </div>
-                    </div>
-                    
-                    <div class="ticket-split"></div>
-
-                    <div class="ticket-right">
-                        <div class="trip-info">
-                            <span class="label-small">I'm going to...</span>
-                            <h2 class="store-large">MCDONALDS</h2>
-                            <div class="meta-row">
-                                <span><i class="ph ph-clock"></i> 10 min</span>
-                                <span><i class="ph ph-warning-circle"></i> No Drinks</span>
-                            </div>
-                        </div>
-                        <div class="trip-action">
-                            <div class="slot-counter">0/4 slots full</div>
-                            <button class="btn-request">Request</button>
-                        </div>
-                    </div>
-                </article>
-
+                <!-- Orders will be dynamically loaded here -->
             </div>
         </main>
 
     </div>
 
-    <a href="order.html" class="fab-mobile">
+    <a href="orders.html" class="fab-mobile">
         <i class="ph ph-plus"></i>
     </a>
 
+    <script type="module" src="profile.js"></script>
 </body>
 </html>

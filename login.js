@@ -85,7 +85,7 @@ async function handleSubmit() {
     if (result.success) {
       // Store user ID in sessionStorage for welcome message
       sessionStorage.setItem('welcomeUser', result.user.uid);
-      window.location.href = 'orders.html';
+      window.location.href = 'homePage.html';
     } else {
       if (result.error.includes('invalid-credential')) {
         alert('Invalid email or password. Please check and try again.');
