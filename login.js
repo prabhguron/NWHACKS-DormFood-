@@ -1,15 +1,13 @@
-// login.js
+// login.js - Import Firebase functions
 import { signUpUser, loginUser } from './firebase.js';
 
 const urlParams = new URLSearchParams(window.location.search);
 const mode = urlParams.get('mode');
 
-// Debug: Log what mode we got
 console.log('URL mode:', mode);
 
 let isSignUp = mode === 'signup';
 
-// Debug: Log the initial state
 console.log('isSignUp:', isSignUp);
 
 const formTitle = document.getElementById('form-title');
@@ -54,7 +52,7 @@ navToggle.addEventListener('click', function() {
   updateForm();
 });
 
-btnSubmit.addEventListener('click', async function() {
+async function handleSubmit() {
   const email = emailInput.value.trim();
   const password = passwordInput.value.trim();
   
@@ -83,9 +81,27 @@ btnSubmit.addEventListener('click', async function() {
     const result = await loginUser(email, password);
     
     if (result.success) {
-      window.location.href = 'homePageLogged.html';
+      window.location.href = 'homePageLogin.html';
     } else {
-      alert('Login failed: ' + result.error);
+      if (result.error.includes('invalid-credential')) {
+        alert('Invalid email or password. Please check and try again.');
+      } else {
+        alert('Login failed: ' + result.error);
+      }
     }
+  }
+}
+
+// Button click
+btnSubmit.addEventListener('click', handleSubmit);
+
+// Press Enter on any input to submit
+[nameInput, emailInput, passwordInput].forEach(input => {
+  if (input) {
+    input.addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') {
+        handleSubmit();
+      }
+    });
   }
 });
