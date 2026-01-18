@@ -1,0 +1,20 @@
+{
+  "name": "nwhacks-dormfood-",
+  "version": "1.0.0",
+  "description": "",
+  "main": "firebase.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prabhguron/NWHACKS-DormFood-.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/prabhguron/NWHACKS-DormFood-/issues"
+  },
+  "homepage": "https://github.com/prabhguron/NWHACKS-DormFood-#readme"
+}
