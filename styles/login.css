@@ -1,0 +1,174 @@
+/* =========================================
+   LOGIN PAGE STYLES (Varsity Theme)
+   ========================================= */
+
+/* 1. LAYOUT */
+.login-main {
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1rem;
+    background-color: var(--cream);
+}
+
+.form-wrapper {
+    width: 100%;
+    max-width: 420px;
+}
+
+/* 2. THE CARD ("ID Card" Look) */
+.form-card {
+    background: var(--white);
+    border: 3px solid var(--navy);
+    border-radius: 12px;
+    padding: 2.5rem;
+    
+    /* Hard Shadow */
+    box-shadow: 8px 8px 0px var(--navy);
+    position: relative;
+}
+
+/* Header Typography */
+.form-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.form-title {
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--navy);
+    margin: 0;
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+}
+
+.form-subtitle {
+    color: #64748b;
+    font-weight: 500;
+    margin-top: 0.5rem;
+    font-size: 0.95rem;
+}
+
+/* 3. INPUTS */
+.form-group {
+    margin-bottom: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+/* Utility to hide the Name field */
+.hidden {
+    display: none !important;
+}
+
+.input-label {
+    font-size: 0.8rem;
+    font-weight: 900;
+    color: var(--navy);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.input-field {
+    width: 100%;
+    padding: 1rem;
+    font-family: var(--font-stack);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--navy);
+    background: #f8fafc; /* Very light gray */
+    border: 2px solid #cbd5e1;
+    border-radius: 6px;
+    transition: all 0.2s;
+}
+
+.input-field:focus {
+    outline: none;
+    background: var(--white);
+    border-color: var(--navy);
+    box-shadow: 4px 4px 0px rgba(30, 58, 138, 0.1);
+}
+
+.input-field::placeholder {
+    color: #cbd5e1;
+    font-weight: 500;
+}
+
+/* 4. BUTTONS */
+.btn-submit {
+    width: 100%;
+    padding: 1rem;
+    margin-top: 1rem;
+    background-color: var(--navy);
+    color: var(--white);
+    font-family: var(--font-stack);
+    font-size: 1.1rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    
+    /* Button Shadow */
+    box-shadow: 4px 4px 0px #0f172a; 
+    transition: transform 0.1s, box-shadow 0.1s;
+}
+
+.btn-submit:active {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px #0f172a;
+}
+
+.btn-nav-action {
+    background: transparent;
+    border: 2px solid var(--navy);
+    padding: 0.5rem 1.2rem;
+    font-weight: 700;
+    color: var(--navy);
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.btn-nav-action:hover {
+    background: var(--navy);
+    color: var(--white);
+}
+
+/* 5. TOGGLE TEXT */
+.toggle-area {
+    margin-top: 1.5rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #64748b;
+}
+
+.btn-text-link {
+    background: none;
+    border: none;
+    color: var(--navy);
+    font-weight: 900;
+    cursor: pointer;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    font-family: var(--font-stack);
+    font-size: 0.9rem;
+    padding: 0;
+    margin-left: 5px;
+}
+
+.btn-text-link:hover {
+    color: #4338ca; /* Slightly lighter blue on hover */
+}
+
+/* Footer */
+.footer-bar {
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.8rem;
+    color: var(--navy);
+    opacity: 0.5;
+}

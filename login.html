@@ -3,44 +3,61 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>WantAnything? - Login</title>
+  <title>WantAnything? - Access</title>
+  
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-</head>
+  
+  <link rel="stylesheet" href="styles/styles.css"> <link rel="stylesheet" href="login.css">  </head>
+  <link rel="stylesheet" href="styles/login.css"> <link rel="stylesheet" href="login.css">  </head>
 <body>
+
   <nav class="navbar">
-    <h1 class="logo-text">WantAnything?</h1>
-    <button class="btn btn-small" id="nav-toggle">Sign Up</button>
+    <a href="landing.html" class="logo-link">
+        <span class="logo-text">WantAnything?</span>
+    </a>
+    <button class="btn-nav-action" id="nav-toggle">Sign Up</button>
   </nav>
 
-  <main class="main-content">
+  <main class="login-main">
     <div class="form-wrapper">
-      <div class="form-container">
-        <h2 id="form-title" class="form-title">Login to Your Account</h2>
+      
+      <div class="form-card">
+        
+        <header class="form-header">
+            <h2 id="form-title" class="form-title">STUDENT LOGIN</h2>
+            <p class="form-subtitle">Enter your dorm credentials.</p>
+        </header>
         
         <div id="name-field" class="form-group hidden">
-          <input type="text" id="name" placeholder="Full Name" class="input-field">
+          <label class="input-label">Full Name</label>
+          <input type="text" id="name" placeholder="e.g. John Doe" class="input-field">
         </div>
         
         <div class="form-group">
-          <input type="email" id="email" placeholder="Email" class="input-field">
+          <label class="input-label">Email Address</label>
+          <input type="email" id="email" placeholder="student@university.edu" class="input-field">
         </div>
         
         <div class="form-group">
-          <input type="password" id="password" placeholder="Password" class="input-field">
+          <label class="input-label">Password</label>
+          <input type="password" id="password" placeholder="••••••••" class="input-field">
         </div>
         
-        <button id="btn-submit" class="btn btn-submit">Log in</button>
+        <button id="btn-submit" class="btn-submit">ENTER CAMPUS</button>
         
-        <p class="toggle-text">
-          <span id="toggle-message">Don't have an account?</span>
-          <a id="toggle-link">Sign Up</a>
-        </p>
+        <div class="toggle-area">
+          <span id="toggle-message">New to campus?</span>
+          <button id="toggle-link" class="btn-text-link">Create Account</button>
+        </div>
+
       </div>
     </div>
   </main>
 
-  <footer class="footer-bar"></footer>
+  <footer class="footer-bar">
+    &copy; 2026 WantAnything?
+  </footer>
 
-<script type="module" src="login.js"></script></body>
+  <script type="module" src="login.js"></script>
+</body>
 </html>

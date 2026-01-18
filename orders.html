@@ -1,50 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>WantAnything? - Orders</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="order.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WantAnything? - New Run</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/order.css">
 </head>
 <body>
-  <nav class="navbar">
-    <h1 class="logo-text">WantAnything?</h1>
-    <div class="nav-actions">
-      <button class="btn btn-icon">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
-          <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
-        </svg>
-      </button>
-      <button class="btn btn-small">Account</button>
-    </div>
-  </nav>
 
-  <main class="orders-main">
-    <!-- Create Order Section -->
-    <div class="create-order-section">
-      <h2>Create New Order</h2>
-      <div class="create-form">
-        <input type="text" id="store-input" placeholder="Where are you going? (e.g., Costco, Walmart)" class="input-field">
-        <input type="text" id="eta-input" placeholder="ETA (e.g., 20 min, 1 hour)" class="input-field">
-        <input type="number" id="capacity-input" placeholder="Max items you can carry" class="input-field">
-        <button id="btn-create-order" class="btn btn-large">Create Order</button>
-      </div>
-    </div>
+    <nav class="navbar">
+        <a href="homePage.html" class="logo-link">
+            <span class="logo-text">WantAnything?</span>
+        </a>
+        <div class="nav-actions" style="display: flex; gap: 1rem; align-items: center;">
+            <button class="btn-login" style="border:none; padding:0;">
+                <i class="ph ph-bell" style="font-size: 1.5rem;"></i>
+            </button>
+            <button class="btn-login">Account</button>
+        </div>
+    </nav>
 
-    <!-- Active Orders Section -->
-    <div class="orders-section">
-      <h2>Active Orders</h2>
-      <div id="orders-container" class="orders-container">
-        <!-- Orders will be dynamically loaded here -->
-      </div>
-    </div>
-  </main>
+    <main class="run-container">
+        
+        <header class="run-header">
+            <h1 class="page-title">Start a Run</h1>
+            <p class="page-subtitle">Fill in the details so neighbors can request items.</p>
+        </header>
 
-  <footer class="footer-bar"></footer>
+        <form class="run-form">
+            
+            <div class="form-group">
+                <label for="destination" class="label-heading">DESTINATION</label>
+                <input type="text" id="destination" class="input-massive" placeholder="e.g. Trader Joe's">
+            </div>
 
-<script type="module" src="orders.js"></script>
+            <div class="form-group">
+                <label for="time" class="label-heading">LEAVING IN</label>
+                <input type="text" id="time" class="input-massive" placeholder="e.g. 15 mins">
+            </div>
+
+            <div class="form-group">
+                <div class="label-row">
+                    <label class="label-heading">CAPACITY & LIMITS</label>
+                    <span class="helper-label">Select all that apply</span>
+                </div>
+                
+                <div class="tags-grid">
+                    <button type="button" class="tag-btn" onclick="toggleTag(this)">Limited Space</button>
+                    <button type="button" class="tag-btn" onclick="toggleTag(this)">Backpack Only</button>
+                    <button type="button" class="tag-btn" onclick="toggleTag(this)">Trunk Space</button>
+                    
+                    <button type="button" class="tag-btn" onclick="toggleTag(this)">Small Items</button>
+                    <button type="button" class="tag-btn" onclick="toggleTag(this)">Medium Items</button>
+                    <button type="button" class="tag-btn" onclick="toggleTag(this)">Large Items</button>
+                    
+                    <button type="button" class="tag-btn" onclick="toggleTag(this)">Not Heavy</button>
+                    <button type="button" class="tag-btn active" onclick="toggleTag(this)">Heavy Allowed</button>
+                </div>
+            </div>
+
+            <div class="form-actions">
+                <button type="button" class="btn-publish">
+                    PUBLISH RUN
+                </button>
+            </div>
+
+        </form>
+
+    </main>
+
+    <script>
+        // Toggle class for visual feedback
+        function toggleTag(btn) {
+            btn.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
