@@ -1,5 +1,5 @@
 // login.js - Import Firebase functions
-import { signUpUser, loginUser } from './firebase.js';
+import { signUpUser, loginUser, getUserData } from './firebase.js';
 
 const urlParams = new URLSearchParams(window.location.search);
 const mode = urlParams.get('mode');
@@ -72,6 +72,8 @@ async function handleSubmit() {
     const result = await signUpUser(email, password, name);
     
     if (result.success) {
+      // Store user ID in sessionStorage for welcome message
+      sessionStorage.setItem('welcomeUser', result.user.uid);
       window.location.href = 'reference.html';
     } else {
       alert('Sign up failed: ' + result.error);
@@ -81,7 +83,9 @@ async function handleSubmit() {
     const result = await loginUser(email, password);
     
     if (result.success) {
-      window.location.href = 'homePageLogin.html';
+      // Store user ID in sessionStorage for welcome message
+      sessionStorage.setItem('welcomeUser', result.user.uid);
+      window.location.href = 'orders.html';
     } else {
       if (result.error.includes('invalid-credential')) {
         alert('Invalid email or password. Please check and try again.');
