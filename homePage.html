@@ -3,45 +3,131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WantAnything? - Campus Delivery</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>WantAnything? - Feed</title>
+    
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-</head>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <link rel="stylesheet" href="/styles/home.css"> <link rel="stylesheet" href="home.css">   </head>
 <body>
 
-    <header class="navbar">
-        <div class="logo-container" id="nav-logo">
+    <nav class="navbar">
+        <a href="homePage.html" class="logo-link">
             <span class="logo-text">WantAnything?</span>
-        </div>
+        </a>
         <div class="nav-actions">
-            <button id="btn-login" class="btn btn-small">Log in</button>
+            <button class="btn-icon"><i class="ph ph-bell"></i></button>
+            <button class="btn-login">Account</button>
         </div>
-    </header>
+    </nav>
 
-    <main class="hero-section">
-        <div class="hero-content">
-            <h1 class="hero-title">
-                <span class="title-top">Campus Life.</span>
-                <span class="title-block">BETTER FOOD</span>
-            </h1>
+    <div class="app-container">
 
-            <p class="hero-description" id="hero-text">
-                Your exclusive dorm delivery network. Get groceries, snacks, 
-                and meals delivered straight to your lobby by fellow students.
-            </p>
-
-            <div class="hero-buttons">
-                <button id="btn-signup" class="btn btn-large">Sign Up</button>
-                <button id="btn-learn-more" class="btn btn-large">Learn More</button>
+        <aside class="sidebar">
+            
+            <div class="user-widget">
+                <div class="user-avatar">RS</div>
+                <div class="user-info">
+                    <h3 class="user-name">Rodrigo S.</h3>
+                    <span class="user-status">📍 Dorm 4 • Floor 2</span>
+                </div>
             </div>
-        </div>
-    </main>
 
-    <footer class="footer-bar" id="main-footer">
-        </footer>
+            <div class="filter-section">
+                <h4 class="section-label">YOUR GROUPS</h4>
+                <span>add a group</span>
+                <button class="nav-item active">
+                    <i class="ph ph-squares-four"></i>
+                    <span>All Updates</span>
+                </button>
+                <button class="nav-item">
+                    <i class="ph ph-house-line"></i>
+                    <span>Dorm 4 (Main)</span>
+                </button>
+                <button class="nav-item">
+                    <i class="ph ph-code"></i>
+                    <span>CS Club</span>
+                </button>
+            </div>
 
-    <script src="homePage.js"></script>
+            <a href="order.html" class="btn-sidebar-cta">
+                <i class="ph ph-plus-circle"></i>
+                Start a Run
+            </a>
+        </aside>
+
+        <main class="feed-area">
+
+            <header class="feed-header">
+                <h1 class="feed-title">Live Requests</h1>
+                <div class="search-bar">
+                    <i class="ph ph-magnifying-glass search-icon"></i>
+                    <input type="text" placeholder="Search stores (e.g. Costco)...">
+                </div>
+            </header>
+
+            <div class="ticket-list">
+
+                <article class="ticket">
+                    <div class="ticket-left">
+                        <div class="avatar-circle">JD</div>
+                        <div class="runner-meta">
+                            <span class="runner-name">John Doe</span>
+                            <span class="group-tag">Dorm 4</span>
+                        </div>
+                    </div>
+                    
+                    <div class="ticket-split"></div> <div class="ticket-right">
+                        <div class="trip-info">
+                            <span class="label-small">I'm going to...</span>
+                            <h2 class="store-large">COSTCO</h2>
+                            <div class="meta-row">
+                                <span><i class="ph ph-clock"></i> 20 min</span>
+                                <span><i class="ph ph-package"></i> 5 Items Max</span>
+                            </div>
+                        </div>
+                        <div class="trip-action">
+                            <div class="slot-counter">3/5 slots full</div>
+                            <button class="btn-request">Request</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="ticket">
+                    <div class="ticket-left">
+                        <div class="avatar-circle style-orange">SJ</div>
+                        <div class="runner-meta">
+                            <span class="runner-name">Sarah J.</span>
+                            <span class="group-tag">CS Club</span>
+                        </div>
+                    </div>
+                    
+                    <div class="ticket-split"></div>
+
+                    <div class="ticket-right">
+                        <div class="trip-info">
+                            <span class="label-small">I'm going to...</span>
+                            <h2 class="store-large">MCDONALDS</h2>
+                            <div class="meta-row">
+                                <span><i class="ph ph-clock"></i> 10 min</span>
+                                <span><i class="ph ph-warning-circle"></i> No Drinks</span>
+                            </div>
+                        </div>
+                        <div class="trip-action">
+                            <div class="slot-counter">0/4 slots full</div>
+                            <button class="btn-request">Request</button>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </main>
+
+    </div>
+
+    <a href="order.html" class="fab-mobile">
+        <i class="ph ph-plus"></i>
+    </a>
+
 </body>
 </html>

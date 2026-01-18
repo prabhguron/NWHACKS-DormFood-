@@ -1,0 +1,476 @@
+/*  1. VARIABLES & RESET */
+:root {
+    /* PALETTE: Navy & Cream (No Yellow/Orange) */
+    --navy: #1e3a8a;       /* Primary Dark */
+    --navy-light: #2e4ead; /* Hover State */
+    --cream: #FFFDF5;      /* Background */
+    --white: #FFFFFF;      /* Text on Blue */
+    --gray-placeholder: #cbd5e1; /* For image placeholders */
+    
+    /* STYLE TOKENS */
+    --font-stack: 'Poppins', sans-serif;
+    --border-thick: 3px solid var(--navy);
+    --shadow-hard: 6px 6px 0px var(--navy); /* The "Varsity" Shadow */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-stack);
+    background-color: var(--cream);
+    color: var(--navy);
+    line-height: 1.6;
+}
+
+/*  2. NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background-color: var(--white);
+    border-bottom: var(--border-thick);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo-link {
+    text-decoration: none; 
+    color: inherit;       
+    display: flex;        
+    align-items: center;
+}
+
+.logo-text {
+    font-weight: 900;     
+    font-size: 1.8rem;     
+    letter-spacing: -1.5px;
+    color: var(--navy);    
+}
+
+.btn-login {
+    background: transparent;
+    border: 2px solid var(--navy);
+    padding: 0.5rem 1.5rem;
+    font-weight: 700;
+    color: var(--navy);
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.2s;
+}
+
+.btn-login:hover {
+    background: var(--navy);
+    color: var(--white);
+}
+
+/* 3. HERO SECTION */
+.hero-section {
+    padding: 6rem 1rem;
+    text-align: center;
+    position: relative; /* For absolute decorations */
+    overflow: hidden;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
+}
+
+/* Typography */
+.hero-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.title-small {
+    font-weight: 900;
+    font-size: 3rem;
+    line-height: 1;
+}
+
+.title-block {
+    background-color: var(--navy);
+    color: var(--white);
+    font-size: 3.5rem;
+    font-weight: 900;
+    padding: 0 1rem;
+    text-transform: uppercase;
+    /* Slight rotation for style */
+    transform: rotate(-2deg); 
+    display: inline-block;
+    margin-top: 5px;
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    max-width: 600px;
+    margin: 0 auto 2.5rem auto;
+    color: #475569; /* Softer blue-grey */
+}
+
+/* Buttons */
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.btn-large {
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    border: var(--border-thick);
+    box-shadow: var(--shadow-hard);
+    transition: transform 0.2s;
+}
+
+.btn-large:active {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px var(--navy);
+}
+
+.btn-primary {
+    background-color: var(--navy);
+    color: var(--white);
+}
+
+.btn-secondary {
+    background-color: var(--white);
+    color: var(--navy);
+}
+
+/* DECORATION: DOTS */
+/* This creates a polka dot pattern using radial-gradient */
+.decor-dots {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background-image: radial-gradient(var(--navy) 20%, transparent 20%);
+    background-size: 20px 20px; /* Size of dots spacing */
+    opacity: 0.15;
+    z-index: 1;
+}
+
+.top-right { top: -20px; right: -50px; }
+.bottom-left { bottom: -20px; left: -50px; }
+
+/* 4. FEATURES SECTION (Inverted: Cream BG, Navy Text) */
+.features-section {
+    background-color: var(--cream); /* Changed from Navy to Cream */
+    color: var(--navy);             /* Changed from White to Navy */
+    padding: 5rem 5%;
+    text-align: center;
+}
+
+.section-header {
+    font-size: 2.5rem;
+    font-weight: 900;
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+    color: var(--navy); /* Ensure header is Navy */
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.feature-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Updated Placeholders for Light Background */
+.img-1 {
+    width: 150px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.img-2 {
+    width: 200px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.img-3 {
+    width: 200px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.feature-card h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.feature-card p {
+    color: #334155; /* CHANGED: White text -> Dark Slate for readability */
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+/* 5. INFO SECTION (Split Layout) */
+.info-section {
+    padding: 6rem 5%;
+    background-color: var(--cream);
+}
+
+.info-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+}
+
+/* Left Side: Visual */
+.info-visual {
+    flex: 1;
+    position: relative; /* For the decoration offset */
+}
+
+/* The Square Placeholder */
+.img-square {
+    width: 100%;
+     /* Keeps it square */
+    background-color: var(--gray-placeholder);
+    border: var(--border-thick);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #64748b;
+    font-weight: 700;
+    position: relative;
+    z-index: 2; /* Sits above the decor box */
+}
+
+/* Decoration: Offset Blue Box */
+.decor-box-offset {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: var(--border-thick);
+    background-image: linear-gradient(45deg, var(--navy) 25%, transparent 25%, transparent 50%, var(--navy) 50%, var(--navy) 75%, transparent 75%, transparent);
+    background-size: 10px 10px;
+    opacity: 0.2;
+    z-index: 1; /* Sits behind image */
+}
+
+/* Right Side: Content */
+.info-content {
+    flex: 1;
+}
+
+.section-title {
+    font-size: 2.2rem;
+    font-weight: 900;
+    margin-bottom: 2rem;
+    color: var(--navy);
+}
+
+.benefit-list {
+    list-style: none;
+}
+
+.benefit-list li {
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+    border-left: 4px solid var(--navy); /* Blue line decoration */
+}
+
+.benefit-list strong {
+    display: block;
+    font-size: 1.1rem;
+    margin-bottom: 0.2rem;
+}
+
+/* 6. FOOTER */
+.footer {
+    background-color: var(--navy);
+    color: var(--white);
+    text-align: center;
+    padding: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+/* 7. RESPONSIVE (Mobile) */
+@media (max-width: 768px) {
+    .title-small { font-size: 2rem; }
+    .title-block { font-size: 2.5rem; }
+    
+    .hero-buttons { flex-direction: column; width: 100%; }
+    .btn-large { width: 100%; }
+
+    .info-container { flex-direction: column; }
+    .img-placeholder-square { aspect-ratio: 16/9; /* rectangle on mobile */ }
+}
+
+/* =========================================
+   ONBOARDING PAGE STYLES
+   ========================================= */
+
+/* 1. LAYOUT & SPACING */
+.onboard-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 4rem 1.5rem;
+    min-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* 2. TYPOGRAPHY & HEADER */
+.step-tag {
+    font-size: 0.8rem;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+    color: var(--navy);
+    border: 2px solid var(--navy);
+    padding: 0.4rem 0.8rem;
+    border-radius: 50px;
+    margin-bottom: 2rem;
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.onboard-header {
+    margin-bottom: 4rem;
+}
+
+.big-title {
+    font-size: 4rem;
+    font-weight: 900;
+    line-height: 0.95;
+    color: var(--navy);
+    margin-bottom: 1rem;
+    letter-spacing: -1px;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #475569;
+    max-width: 500px;
+    margin: 0 auto;
+    font-weight: 500;
+}
+
+/* 3. CHOICE GRID */
+.choice-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    width: 100%;
+}
+
+/* 4. CHOICE CARDS (The Buttons) */
+.choice-card {
+    background: var(--white);
+    border: 3px solid var(--navy); /* Thick Varsity Border */
+    border-radius: 8px;
+    padding: 3rem 2rem;
+    text-align: left;
+    cursor: pointer;
+    
+    /* Hard Shadow Default */
+    box-shadow: 6px 6px 0px rgba(30, 58, 138, 0.1);
+    
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Hover Effect: Lifts up and shadow gets harder/darker */
+.choice-card:hover {
+    transform: translate(-4px, -4px);
+    box-shadow: 10px 10px 0px var(--navy);
+    border-color: var(--navy);
+}
+
+/* Active/Click Effect */
+.choice-card:active {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px var(--navy);
+}
+
+/* 5. CARD CONTENTS */
+.icon-circle {
+    width: 60px;
+    height: 60px;
+    background: var(--cream);
+    border: 2px solid var(--navy);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    color: var(--navy);
+    margin-bottom: 0.5rem;
+}
+
+.card-title {
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: var(--navy);
+    text-transform: uppercase;
+    margin: 0;
+    line-height: 1;
+}
+
+.card-desc {
+    font-size: 1rem;
+    color: #64748b; /* Slate Gray */
+    line-height: 1.5;
+    margin-bottom: 1rem;
+}
+
+.fake-link {
+    margin-top: auto; /* Pushes to bottom */
+    font-weight: 700;
+    color: var(--navy);
+    font-size: 1rem;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 2px;
+}
+
+/* 6. RESPONSIVE (Mobile) */
+@media (max-width: 768px) {
+    .big-title { font-size: 3rem; }
+    .choice-grid { grid-template-columns: 1fr; }
+    .choice-card { align-items: center; text-align: center; }
+}

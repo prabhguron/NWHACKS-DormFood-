@@ -1,0 +1,329 @@
+/* 1. VARIABLES & RESET */
+:root {
+    /* PALETTE: Navy & Cream */
+    --navy: #1e3a8a;       /* Primary Dark */
+    --navy-light: #2e4ead; /* Hover State */
+    --cream: #FFFDF5;      /* Background */
+    --white: #FFFFFF;      /* Text on Blue */
+    --gray-placeholder: #cbd5e1;
+    
+    /* STYLE TOKENS */
+    --font-stack: 'Poppins', sans-serif;
+    --border-thick: 3px solid var(--navy);
+    --shadow-hard: 6px 6px 0px var(--navy);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-stack);
+    background-color: var(--cream);
+    color: var(--navy);
+    line-height: 1.6;
+}
+
+/* 2. NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background-color: var(--white);
+    border-bottom: var(--border-thick);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo-link {
+    text-decoration: none; 
+    color: inherit;       
+    display: flex;        
+    align-items: center;
+}
+
+.logo-text {
+    font-weight: 900;     
+    font-size: 1.8rem;     
+    letter-spacing: -1.5px;
+    color: var(--navy);    
+}
+
+.btn-login {
+    background: transparent;
+    border: 2px solid var(--navy);
+    padding: 0.5rem 1.5rem;
+    font-weight: 700;
+    color: var(--navy);
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.2s;
+}
+
+.btn-login:hover {
+    background: var(--navy);
+    color: var(--white);
+}
+
+/* 3. APP LAYOUT (Dashboard Grid) */
+.app-container {
+    display: grid;
+    /* Sidebar is 260px fixed, Feed takes the rest */
+    grid-template-columns: 260px 1fr; 
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    min-height: calc(100vh - 80px);
+}
+
+/* 4. LEFT SIDEBAR (Sticky) */
+.sidebar {
+    position: sticky;
+    top: 100px;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+/* User Widget */
+.user-widget {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+.user-avatar {
+    width: 48px;
+    height: 48px;
+    background: var(--navy);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+}
+
+.user-info { display: flex; flex-direction: column; }
+.user-name { font-size: 1rem; font-weight: 700; color: var(--navy); margin: 0; }
+.user-status { font-size: 0.75rem; color: #64748b; }
+
+/* Navigation Links */
+.filter-section { display: flex; flex-direction: column; gap: 0.5rem; }
+
+.section-label {
+    font-size: 0.75rem;
+    color: #94a3b8;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.5px;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    background: transparent;
+    border: none;
+    padding: 0.8rem;
+    font-family: var(--font-stack);
+    font-size: 0.95rem;
+    color: #64748b;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.2s;
+    text-align: left;
+}
+
+.nav-item:hover { background: #f1f5f9; color: var(--navy); }
+.nav-item.active { background: #dbeafe; color: var(--navy); font-weight: 700; }
+
+/* Sidebar CTA Button */
+.btn-sidebar-cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    background: var(--navy);
+    color: var(--white);
+    padding: 1rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: transform 0.2s;
+}
+
+/* 5. RIGHT AREA (Feed & Search) */
+.feed-area {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* Header with Search */
+.feed-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.feed-title {
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--navy);
+    margin: 0;
+}
+
+.search-bar {
+    position: relative;
+    width: 300px;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 0.8rem 1rem 0.8rem 2.5rem; /* Space for icon */
+    border: 2px solid #cbd5e1;
+    border-radius: 50px;
+    font-family: var(--font-stack);
+    background: var(--white);
+}
+
+.search-bar input:focus {
+    outline: none;
+    border-color: var(--navy);
+}
+
+.search-icon {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #94a3b8;
+    font-size: 1.1rem;
+}
+
+/* THE TICKET CARD (No Animation) */
+.ticket {
+    background: var(--navy);
+    color: var(--white);
+    border-radius: 16px;
+    display: flex;
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+}
+
+/* Left Stub */
+.ticket-left {
+    padding: 1.5rem;
+    width: 140px;
+    background: rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 0.8rem;
+}
+
+.avatar-circle {
+    width: 50px;
+    height: 50px;
+    background: #e2e8f0;
+    color: var(--navy);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+}
+.avatar-circle.style-orange { background: #f97316; color: white; }
+
+.runner-meta { display: flex; flex-direction: column; gap: 0.2rem; }
+.runner-name { font-weight: 700; font-size: 0.9rem; }
+.group-tag { font-size: 0.7rem; opacity: 0.8; text-transform: uppercase; }
+
+/* The Perforated Line Visual */
+.ticket-split {
+    width: 4px;
+    background-image: radial-gradient(circle, var(--cream) 2px, transparent 2.5px);
+    background-size: 4px 8px; /* Dots pattern */
+    background-repeat: repeat-y;
+    background-position: center;
+    margin: 10px 0;
+}
+
+/* Right Content */
+.ticket-right {
+    flex: 1;
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.trip-info { display: flex; flex-direction: column; }
+.label-small { font-size: 0.8rem; opacity: 0.8; margin-bottom: 0.2rem; }
+.store-large { font-size: 2rem; font-weight: 900; margin: 0; line-height: 1; }
+.meta-row {
+    display: flex; gap: 1rem; margin-top: 0.8rem;
+    font-size: 0.9rem; font-weight: 600;
+}
+
+/* Action Area */
+.trip-action {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.5rem;
+}
+
+.slot-counter { font-size: 0.8rem; opacity: 0.9; }
+
+.btn-request {
+    background: #e2e8f0;
+    color: var(--navy);
+    border: none;
+    padding: 0.6rem 1.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.btn-request:hover { background: var(--white); }
+
+/* 7. RESPONSIVE (Mobile) */
+.fab-mobile { display: none; }
+
+@media (max-width: 900px) {
+    .app-container { grid-template-columns: 1fr; }
+    .sidebar { display: none; }
+    
+    .feed-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
+    .search-bar { width: 100%; }
+    
+    .ticket { flex-direction: column; }
+    .ticket-left { width: 100%; flex-direction: row; justify-content: flex-start; padding: 1rem; }
+    .ticket-split { width: 100%; height: 4px; background-size: 8px 4px; background-repeat: repeat-x; }
+    .ticket-right { flex-direction: column; align-items: flex-start; gap: 1.5rem; }
+    .trip-action { width: 100%; align-items: stretch; }
+    
+    /* Show FAB on Mobile */
+    .fab-mobile {
+        display: flex; align-items: center; justify-content: center;
+        position: fixed; bottom: 2rem; right: 2rem;
+        width: 60px; height: 60px;
+        background: var(--navy); color: var(--white);
+        border-radius: 50%; font-size: 1.5rem;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+}

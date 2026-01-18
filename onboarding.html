@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WantAnything? - Welcome</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <link rel="stylesheet" href="/styles/styles.css"> <link rel="stylesheet" href="onboarding.css"> </head>
+<body>
+    
+    <div id="loading-overlay">
+        Checking Account Status...
+    </div>
+
+    <nav class="navbar">
+        <div class="logo-link">
+            <span class="logo-text">WantAnything?</span>
+        </div>
+    </nav>
+
+    <main class="onboard-container hidden" id="onboarding-content">
+        
+        <div class="step-tag">STEP 1 OF 2</div>
+
+        <header class="onboard-header">
+            <h1 class="big-title">WELCOME TO<br>THE TEAM.</h1>
+            <p class="subtitle">To start ordering or running, you need to belong to a Dorm Group.</p>
+        </header>
+
+        <div class="choice-grid">
+            <button class="choice-card" id="btn-join-group">
+                <div class="icon-circle"><i class="ph ph-users-three"></i></div>
+                <h2 class="card-title">Join a Dorm</h2>
+                <p class="card-desc">My dorm is already on the app. I have a code or need to search.</p>
+                <div class="fake-link">Find my group &rarr;</div>
+            </button>
+
+            <button class="choice-card" id="btn-create-group">
+                <div class="icon-circle"><i class="ph ph-house-line"></i></div>
+                <h2 class="card-title">Create Group</h2>
+                <p class="card-desc">My dorm isn't here yet. I want to set up the HQ.</p>
+                <div class="fake-link">Start new group &rarr;</div>
+            </button>
+        </div>
+
+    </main>
+
+    <script type="module" src="/scripts/onboarding.js"></script>
+</body>
+</html>

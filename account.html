@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WantAnything? - Account</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <link rel="stylesheet" href="styles.css"> <link rel="stylesheet" href="/styles/home.css">   <link rel="stylesheet" href="account.css"> </head>
+<body>
+
+    <nav class="navbar">
+        <a href="index.html" class="logo-link">
+            <span class="logo-text">WantAnything?</span>
+        </a>
+        <div class="nav-actions">
+            <button class="btn-icon"><i class="ph ph-bell"></i></button>
+            <button class="btn-login" style="background: var(--navy); color: var(--white);">Account</button>
+        </div>
+    </nav>
+
+    <div class="app-container">
+
+        <aside class="sidebar">
+            <div class="user-widget">
+                <div class="user-avatar">RS</div>
+                <div class="user-info">
+                    <h3 class="user-name">Rodrigo S.</h3>
+                    <span class="user-status">📍 Dorm 4 • Floor 2</span>
+                </div>
+            </div>
+
+            <div class="filter-section">
+                <a href="home.html" class="nav-item">
+                    <i class="ph ph-squares-four"></i>
+                    <span>Feed</span>
+                </a>
+                <a href="account.html" class="nav-item active">
+                    <i class="ph ph-gear"></i>
+                    <span>Settings</span>
+                </a>
+            </div>
+
+            <a href="order.html" class="btn-sidebar-cta">
+                <i class="ph ph-plus-circle"></i>
+                Start a Run
+            </a>
+        </aside>
+
+        <main class="account-area">
+
+            <header class="account-header">
+                <h1 class="page-headline">MY PROFILE</h1>
+            </header>
+
+            <form class="account-form">
+
+                <div class="avatar-section">
+                    <div class="avatar-large">RS</div>
+                    <div class="avatar-actions">
+                        <button type="button" class="btn-secondary">Change Photo</button>
+                        <p class="helper-text">Accepts JPG, PNG. Max 2MB.</p>
+                    </div>
+                </div>
+
+                <div class="form-divider"></div>
+
+                <div class="form-section">
+                    <h3 class="section-heading">Personal Details</h3>
+                    
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label class="label-heading">FULL NAME</label>
+                            <input type="text" class="input-massive" value="Rodrigo Sanchez">
+                        </div>
+                        <div class="input-group">
+                            <label class="label-heading">EMAIL (.edu)</label>
+                            <input type="email" class="input-massive" value="rodrigo@university.edu" disabled>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3 class="section-heading">Dorm Logistics</h3>
+                    <p class="section-desc">This helps runners find your lobby.</p>
+
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label class="label-heading">BUILDING</label>
+                            <select class="input-massive">
+                                <option>Dorm 4 (The Commons)</option>
+                                <option>Dorm 1 (North Hall)</option>
+                                <option>CS House</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label class="label-heading">FLOOR / ROOM</label>
+                            <input type="text" class="input-massive" value="Floor 2, Room 204">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="action-footer">
+                    <button type="button" class="btn-save">Save Changes</button>
+                    <button type="button" class="btn-logout">Log Out</button>
+                </div>
+
+            </form>
+
+        </main>
+
+    </div>
+
+</body>
+</html>
