@@ -1,0 +1,192 @@
+/* =========================================
+   VARSITY THEME EXTENSION (Order Page)
+   ========================================= */
+:root {
+    /* Extending your existing palette */
+    --navy: #1e3a8a;   
+    --cream: #FFFDF5; 
+    --green-stadium: #15803d;  /* Success Green */
+    --green-dark: #14532d;     /* Hover Green */
+}
+
+/* Page Layout - Editorial Style */
+.run-container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 4rem 1.5rem;
+    min-height: 85vh;
+}
+
+/* Typography Header */
+.run-header {
+    text-align: center;
+    margin-bottom: 3.5rem;
+}
+
+.page-title {
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: var(--navy);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+}
+
+.page-subtitle {
+    color: #475569;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+/* =========================================
+   FORM STYLING (Open Canvas Style)
+   ========================================= */
+.run-form {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem; /* Spacing between big sections */
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Labels */
+.label-heading {
+    font-size: 0.9rem;
+    font-weight: 900;
+    color: var(--navy);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.label-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.helper-label {
+    font-size: 0.85rem;
+    color: #64748b;
+    font-style: italic;
+}
+
+/* Massive Inputs */
+.input-massive {
+    width: 100%;
+    padding: 1.2rem;
+    font-family: var(--font-stack);
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--navy);
+    background: var(--white);
+    
+    /* The "Varsity" Look: Thick Navy Border, Hard Shadow */
+    border: 3px solid var(--navy);
+    border-radius: 6px;
+    box-shadow: 4px 4px 0px rgba(30, 58, 138, 0.15); 
+    
+    transition: all 0.2s;
+}
+
+.input-massive::placeholder {
+    color: #cbd5e1;
+    font-weight: 500;
+}
+
+.input-massive:focus {
+    outline: none;
+    box-shadow: 8px 8px 0px var(--navy); /* Pop effect on focus */
+    transform: translate(-2px, -2px);
+}
+
+/* =========================================
+   8. TAG SYSTEM (Order Page)
+   ========================================= */
+
+/* The Container for the tags */
+.tags-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-top: 0.5rem;
+}
+
+/* Base Tag Style (Unselected) */
+.tag-btn {
+    background: transparent;
+    border: 2px solid var(--navy);
+    padding: 0.6rem 1.2rem;
+    border-radius: 50px; /* Pill shape */
+    
+    font-family: var(--font-stack);
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--navy);
+    cursor: pointer;
+    
+    /* Smooth transition for the color change */
+    transition: all 0.2s ease-in-out;
+}
+
+/* Hover State (Subtle indication) */
+.tag-btn:hover {
+    background-color: rgba(30, 58, 138, 0.05); /* Very faint blue tint */
+}
+
+/* ACTIVE STATE (Selected) 
+   This mimics the Login Button hover effect but persists on click */
+.tag-btn.active {
+    background-color: var(--navy);
+    color: var(--cream);
+    
+    /* Optional: Adds a tiny shift to show it's pressed */
+    transform: translateY(1px); 
+    box-shadow: inset 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+/* =========================================
+   ACTION BUTTON (Green & Heavy)
+   ========================================= */
+.btn-publish {
+    width: 100%;
+    padding: 1.2rem;
+    margin-top: 1rem;
+    
+    background-color: var(--green-stadium);
+    color: var(--white);
+    
+    font-family: var(--font-stack);
+    font-size: 1.4rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    
+    /* Matching the landing page button style */
+    border: 3px solid var(--navy); 
+    border-radius: 8px;
+    box-shadow: 6px 6px 0px var(--navy); 
+    
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-publish:hover {
+    background-color: var(--green-dark);
+    transform: translate(-2px, -2px);
+    box-shadow: 8px 8px 0px var(--navy);
+}
+
+.btn-publish:active {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px var(--navy);
+}
+
+/* Responsive Tweak */
+@media (max-width: 600px) {
+    .page-title { font-size: 2.5rem; }
+    .run-container { padding: 2rem 1rem; }
+}
