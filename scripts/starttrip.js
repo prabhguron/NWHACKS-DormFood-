@@ -4,7 +4,7 @@ function startTrip() {
     const storeInput = document.getElementById('storeInput');
     const etaInput = document.getElementById('etaInput');
     const limitInput = document.getElementById('limitInput');
-
+    
     if (!storeInput || !etaInput || !limitInput) {
         alert('Missing input elements in HTML.');
         return;
