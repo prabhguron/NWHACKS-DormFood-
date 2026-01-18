@@ -1,0 +1,194 @@
+/* =========================================
+   ACCOUNT PAGE STYLES
+   ========================================= */
+
+/* Main Area Padding */
+.account-area {
+    padding-bottom: 4rem;
+}
+
+.page-headline {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: var(--navy);
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+}
+
+/* =========================================
+   FORM LAYOUT
+   ========================================= */
+.account-form {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+/* Divider Line */
+.form-divider {
+    height: 2px;
+    background: #e2e8f0;
+    width: 100%;
+}
+
+/* 1. AVATAR SECTION */
+.avatar-section {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.avatar-large {
+    width: 100px;
+    height: 100px;
+    background: var(--navy);
+    color: var(--white);
+    font-size: 2.5rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 4px solid var(--white);
+    outline: 3px solid var(--navy); /* Creates the double border effect */
+}
+
+.avatar-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.btn-secondary {
+    background: transparent;
+    border: 2px solid var(--navy);
+    padding: 0.6rem 1.2rem;
+    font-family: var(--font-stack);
+    font-weight: 700;
+    color: var(--navy);
+    cursor: pointer;
+    border-radius: 6px;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    width: fit-content;
+}
+
+.btn-secondary:hover {
+    background: #f1f5f9;
+}
+
+/* 2. FORM SECTIONS */
+.form-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.section-heading {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin: 0;
+}
+
+.section-desc {
+    margin-top: -1rem;
+    color: #64748b;
+    font-size: 0.9rem;
+}
+
+.input-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.label-heading {
+    font-size: 0.85rem;
+    font-weight: 900;
+    color: var(--navy);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+/* Reusing Massive Input style but tweaking for this page */
+.input-massive {
+    width: 100%;
+    padding: 1rem;
+    font-family: var(--font-stack);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--navy);
+    background: var(--white);
+    border: 2px solid var(--navy);
+    border-radius: 6px;
+}
+
+.input-massive:focus {
+    outline: none;
+    border-width: 3px;
+}
+
+.input-massive:disabled {
+    background: #f1f5f9;
+    color: #94a3b8;
+    cursor: not-allowed;
+    border-color: #cbd5e1;
+}
+
+/* 3. ACTION FOOTER */
+.action-footer {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 2rem;
+    border-top: 3px solid var(--navy);
+}
+
+.btn-save {
+    background: var(--navy);
+    color: var(--white);
+    padding: 1rem 2.5rem;
+    font-family: var(--font-stack);
+    font-weight: 900;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.btn-save:hover {
+    opacity: 0.9;
+}
+
+.btn-logout {
+    background: transparent;
+    color: #b91c1c; /* Brick Red */
+    font-family: var(--font-stack);
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    font-size: 0.9rem;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.btn-logout:hover {
+    color: #991b1b;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .input-row { grid-template-columns: 1fr; gap: 1rem; }
+    .action-footer { flex-direction: column-reverse; gap: 1.5rem; width: 100%; }
+    .btn-save { width: 100%; }
+}
