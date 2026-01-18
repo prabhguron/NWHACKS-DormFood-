@@ -1,4 +1,6 @@
 // login.js
+import { signUpUser, loginUser } from './firebase.js';
+
 const urlParams = new URLSearchParams(window.location.search);
 const mode = urlParams.get('mode');
 
@@ -12,6 +14,9 @@ console.log('isSignUp:', isSignUp);
 
 const formTitle = document.getElementById('form-title');
 const nameField = document.getElementById('name-field');
+const nameInput = document.getElementById('name');
+const emailInput = document.getElementById('email');
+const passwordInput = document.getElementById('password');
 const btnSubmit = document.getElementById('btn-submit');
 const toggleMessage = document.getElementById('toggle-message');
 const toggleLink = document.getElementById('toggle-link');
@@ -49,12 +54,38 @@ navToggle.addEventListener('click', function() {
   updateForm();
 });
 
-btnSubmit.addEventListener('click', function() {
+btnSubmit.addEventListener('click', async function() {
+  const email = emailInput.value.trim();
+  const password = passwordInput.value.trim();
+  
+  if (!email || !password) {
+    alert('Please fill in email and password');
+    return;
+  }
+  
   if (isSignUp) {
+    const name = nameInput.value.trim();
+    if (!name) {
+      alert('Please enter your name');
+      return;
+    }
+    
     console.log('Signing up...');
-    window.location.href = 'reference.html';
+    const result = await signUpUser(email, password, name);
+    
+    if (result.success) {
+      window.location.href = 'reference.html';
+    } else {
+      alert('Sign up failed: ' + result.error);
+    }
   } else {
     console.log('Logging in...');
-    window.location.href = 'index.html';
+    const result = await loginUser(email, password);
+    
+    if (result.success) {
+      window.location.href = 'homePageLogged.html';
+    } else {
+      alert('Login failed: ' + result.error);
+    }
   }
 });
