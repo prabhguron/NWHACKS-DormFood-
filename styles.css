@@ -1,8 +1,5 @@
-/* 
-   1. CSS VARIABLES (Theme Configuration)
-*/
 :root {
-    /* Color Palette - "The Varsity Navy" */
+    /* Color Palette*/
     --color-primary: #1e3a8a;       /* Deep Navy Blue */
     --color-background: #FFFDF5;    /* Cream / Off-White */
     --color-white: #ffffff;         /* Pure White for Text on Blue */
